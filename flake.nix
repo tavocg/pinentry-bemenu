@@ -30,6 +30,8 @@
             install -Dm755 "$src/menu" "$out/bin/menu"
             ln -s "$out/bin/anypinentry" "$out/bin/pinentry"
           '';
+
+          meta.mainProgram = "anypinentry";
         };
 
         in {
