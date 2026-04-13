@@ -215,8 +215,8 @@ Options:
 
 CMD will be executed by sh(1). The defaults are:
 
-prompt ='dmenu -P -p "$prompt_string"';
-confirm ='printf "%s\n%s" "$AP_YES" "$AP_NO" | dmenu -p "$prompt_string"';
+prompt ='bemenu -x indicator -p "$AP_PROMPT"';
+confirm ='printf "%s\n%s" "$AP_YES" "$AP_NO" | bemenu -p "$AP_PROMPT"';
 error-command ='notify-send -a "Pinentry" "$error__password_mismatch"';
 
 Standard pinentry options
@@ -232,7 +232,7 @@ Standard pinentry options
  -c, --colors STRING        Set custom colors for ncurses
  -a, --ttyalert STRING      Set the alert mode (none, beep or flash)
 
-Please report bugs to <https://github.com/phenax/any-pinentry/issues>.
+Please report bugs in the pinentry-bemenu repository.
 END
 }
 
@@ -272,7 +272,7 @@ parse_cliargs() {
                --prompt)         prompt_action="$2"; shift 2 ;;
                --confirm)        confirm_action="$2"; shift 2 ;;
           -h | --help)           help && exit 0 ;;
-               --version)        echo "anypinentry-$VERSION" && exit 0 ;;
+               --version)        echo "pinentry-bemenu-$VERSION" && exit 0 ;;
           --)                    shift; break ;;
           *)                     ;;
       esac
@@ -300,4 +300,3 @@ done;
 #  "SETQUALITYBAR_TT"
 #  "SETTIMEOUT"
 #  "CLEARPASSPHRASE"
-
